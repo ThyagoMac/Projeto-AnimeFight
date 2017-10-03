@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/estiloall.css">
+    <title>-Anime Fight-</title>
+</head>
+
+<body>
+    <form class="corpo" id="corpse">
+        <header class="cabecalho" id="cabeca">
+            <div>
+                <h1><b>ANIME FIGHT</b></h1>
+            </div>
+        </header>
+
+        <section class="ficha">
+            <div class="cabecalho">
+                <p><label for="priNome">Nome: </label><input type="text" class="nome" id="priNome" size="16" placeholder=" Nome do Personagem">
+                    <label for="priNivel">&nbsp;Nivel: </label><input type="number" class="nivel" id="priNivel" min="1" max="10"
+                        value="1"></p>
+            </div>
+            <div class="atributos">
+                <table class="tabelaAtributo">
+                    <caption><b>Atributos(1)</b></caption>
+                    <tr class="forca">
+                        <td><label for="priFor"> Força: </label></td>
+                        <td><input type="range" id="priFor" min="0" max="10" value="1" step="1"></td>
+                        <td><input type="text" class="box-forca" id="boxFor1" size="1" value="1"></td>
+                    </tr>
+                    <tr class="const">
+                        <td><label for="priCon">Constituição:</label></td>
+                        <td><input type="range" id="priCon" min="0" max="10" value="1" step="1"></td>
+                        <td><input type="text" class="box-con" id="boxCon1" size="1" value="1"></td>
+                    </tr>
+                    <tr class="destreza">
+                        <td><label for="priDex">Destreza: </label></td>
+                        <td><input type="range" id="priDex" min="0" max="10" value="1" step="1"></td>
+                        <td><input type="text" class="box-dex" id="boxDex1" size="1" value="1"></td>
+                    </tr>
+                    <tr class="agilit">
+                        <td><label for="priAgi">Agilidade: </label></td>
+                        <td><input type="range" id="priAgi" min="0" max="10" value="1" step="1"></td>
+                        <td><input type="text" class="box-agi" id="boxAgi1" size="1" value="1"></td>
+                    </tr>
+                    <tr class="magia">
+                        <td><label for="priMag">Magia: </label> </td>
+                        <td><input type="range" id="priMag" min="0" max="10" value="1" step="1"></td>
+                        <td><input type="text" class="box-mag" id="boxMag1" size="1" value="1"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><label for="priTotal"><b>Total: </b></label></p>
+                        </td>
+                        <td><input type="number" class="box-total" id="priTotal" min="0" max="100" value="5" readonly></td>
+                    </tr>
+                </table>
+            </div>
+
+            <label for="perkID"><p><b>Caracteristicas Extras(5)</b></p></label>
+            <div class="perks">
+                <select name="perkN" id="perkID">
+                    <option value="">[Vazio]</option>
+                    <option value="voar">Voar</option>
+                    <option value="atribut">Aumento Atributo(2)</option>
+                    <option value="danoMagic">Dano Magico (1d6)</option>
+                    <option value="controleElement">Controlar Elemento</option>
+                    <option value="teleport">Teleport</option>
+                </select>
+                <br>
+            </div>
+
+            <div class="pericias">
+                <table class="tabelaPericia">
+                    <caption><b>Pericias de Combate</b></caption>
+                    <tr class="tabPer">
+                        <td><label for="priAcerto">Ataque:</label></td>
+                        <td><input type="text" class="box-acerto" id="priAcerto" size="1" value="5" readonly></td>
+                        <td><label for="priDef">Defesa:</label></td>
+                        <td><input type="text" class="box-def" id="priDef" size="1" value="5" readonly></td>
+                    </tr>
+                    <tr class="tabPer">
+                        <td><label for="priHP">HP:</label></td>
+                        <td><input type="text" class="box-hp" id="priHP" size="1" value="15" readonly></td>
+                        <td><label for="priDano">Dano:</label></td>
+                        <td><input type="text" class="box-dano" id="priDano" size="1" value="1" readonly></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="manobras">
+                <label for="primanobrasCombate"><br><b>Manobras de Combate:</b> </label><select name="nManobras" id="primanobrasCombate">
+                <option value="gFor">Golpe Forte</option>
+                <option value="gMed">Golpe Medio</option>
+                <option value="gFra">Golpe Fraco</option>
+                <option value="grab">Agarrão</option>
+                <option value="magia">Ataque Magico</option>
+                <option value="defend">Defender</option>
+            </select>
+            </div>
+        </section>
+
+        <footer class="rodape">
+            <input type="submit" id="checkButton1" value="Finalizar Round" class="checkButton"><br><br>
+            <textarea class="checkButton" name="combatText" id="batText" cols="98" rows="10" placeholder="Resumo de Combate."></textarea>
+        </footer>
+    </form>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/scriptall.js"></script>
+</body>
+
+</html>

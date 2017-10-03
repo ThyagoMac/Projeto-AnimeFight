@@ -1,0 +1,96 @@
+body {
+	color: rgba(0, 0, 0, 1);
+	font-family: arial, sans-serif;
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+h1 {
+	text-align: center;
+}
+
+section.ficha {
+	border-right: 1px solid #606060;
+	width: 345px;
+	box-shadow: 1px 1px 4px black;
+	padding: 1px 0px 10px 5px;
+	background-color: rgb(243, 243, 243);
+}
+
+div.cabecalho {
+	margin: 1px solid #030202;
+}
+
+tr.tabPer {
+	text-align: center;
+}
+
+footer.rodape {
+	clear: both;
+	border-top: 1px solid #606060;
+	width: 345px;
+}
+
+.checkButton {
+	width: 350px;
+	box-shadow: 1px 1px 4px black;
+}
+
+form.corpo {
+	width: 360px;
+	margin: auto;
+}
+
+@media (min-width: 720px) {
+	section.ficha {
+		display: inline-block;
+	}
+	aside.segPersonagem {
+		display: inline-block;
+	}
+	.checkButton {
+		width: 705px;
+	}
+	form.corpo {
+		width: 720px;
+		margin: auto;
+	}
+}
+
+input[type=range] {
+	-webkit-appearance: none;
+	width: 100%;
+	margin: 3.15px 0;
+}
+
+input[type=range]:focus {
+	outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 24.5px;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+	background: #dddcdd;
+	border-radius: 1.3px;
+	border: 0.2px solid #010101;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	box-shadow: 1px 1px 1.3px #000000, 0px 0px 1px #0d0d0d;
+	border: 1.2px solid #000000;
+	height: 31px;
+	width: 13px;
+	border-radius: 50px;
+	background: #ffffff;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -3.35px;
+}
+
+
+
