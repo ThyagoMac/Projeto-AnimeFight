@@ -12,7 +12,8 @@ h1 {
 	text-align: center;
 }
 
-section.ficha {
+section.ficha,
+section.ficha2 {
 	border-right: 1px solid #606060;
 	width: 345px;
 	box-shadow: 1px 1px 4px black;
@@ -34,7 +35,8 @@ footer.rodape {
 	width: 345px;
 }
 
-.checkButton {
+.checkButton,
+.textArea {
 	width: 350px;
 	box-shadow: 1px 1px 4px black;
 }
@@ -45,14 +47,18 @@ form.corpo {
 }
 
 @media (min-width: 720px) {
-	section.ficha {
+	section.ficha,
+	section.ficha2 {
 		display: inline-block;
 	}
 	aside.segPersonagem {
 		display: inline-block;
 	}
 	.checkButton {
-		width: 705px;
+		width: 702px;
+	}
+	.textArea {
+		width: 697px;
 	}
 	form.corpo {
 		width: 720px;
@@ -91,6 +97,3 @@ input[type=range]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	margin-top: -3.35px;
 }
-
-
-
