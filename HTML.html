@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/estiloall.css">
-    <title>-Anime Fight-</title>
+    <title>--Anime Fight--</title>
 </head>
 
 <body>
@@ -94,20 +94,21 @@
                 </table>
             </div>
             <div class="manobras">
-                <label for="primanobrasCombate"><br /><b>Manobras de Combate:</b> </label><select name="nManobras" id="primanobrasCombate">
-                <option value="gFor">Golpe Forte</option>
-                <option value="gMed">Golpe Medio</option>
-                <option value="gFra">Golpe Fraco</option>
-                <option value="grab">Agarrão</option>
-                <option value="magia">Ataque Magico</option>
-                <option value="defend">Defender</option>
-            </select>
+                <label for="primanobrasCombate"><br /><b>Manobras de Combate:</b> </label>
+                <select class="escolha" name="nManobras" id="primanobrasCombate">
+                    <option value="gFor">Golpe Forte</option>
+                    <option value="gMed">Golpe Medio</option>
+                    <option value="gFra">Golpe Fraco</option>
+                    <option value="grab">Agarrão</option>
+                    <option value="magia">Ataque Magico</option>
+                    <option value="defend">Defender</option>
+                </select>
             </div>
         </section>
 
         <footer class="rodape">
-            <input type="submit" id="checkButton1" value="Finalizar Round" class="checkButton"><br /><br />
-            <textarea class="checkButton" name="combatText" id="batText" cols="98" rows="10" placeholder="Resumo de Combate."></textarea>
+            <input type="submit" id="checkButtonN" value="START" class="checkButton"><br /><br />
+            <textarea class="textArea" name="combatText" id="batText" cols="98" rows="10" placeholder="Resumo de Combate."></textarea>
         </footer>
     </form>
 
