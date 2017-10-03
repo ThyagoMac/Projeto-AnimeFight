@@ -61,17 +61,20 @@
             </div>
 
             <label for="perkID"><p><b>Caracteristicas Extras(5)</b></p></label>
-            <div class="perks">
-                <select name="perkN" id="perkID">
+            <div class="caracteristicas">
+                <select class="perks" name="perkN" id="perkID">
                     <option value="">[Vazio]</option>
                     <option value="voar">Voar</option>
                     <option value="atribut">Aumento Atributo(2)</option>
                     <option value="danoMagic">Dano Magico (1d6)</option>
-                    <option value="controleElement">Controlar Elemento</option>
+                    <option value="controle">Controlar Elemento</option>
                     <option value="teleport">Teleport</option>
+                    <option value="armor">Armadura Magica</option>
+                    <option value="arma">Arma Magica</option>     
                 </select>
-                <br>
+                <br />
             </div>
+            <br />
 
             <div class="pericias">
                 <table class="tabelaPericia">
@@ -86,13 +89,12 @@
                         <td><label for="priHP">HP:</label></td>
                         <td><input type="text" class="box-hp" id="priHP" size="1" value="15" readonly></td>
                         <td><label for="priDano">Dano:</label></td>
-                        <td><input type="text" class="box-dano" id="priDano" size="1" value="1" readonly></td>
+                        <td><input type="text" class="box-dano" id="priDano" size="1" value="3" readonly></td>
                     </tr>
-
                 </table>
             </div>
             <div class="manobras">
-                <label for="primanobrasCombate"><br><b>Manobras de Combate:</b> </label><select name="nManobras" id="primanobrasCombate">
+                <label for="primanobrasCombate"><br /><b>Manobras de Combate:</b> </label><select name="nManobras" id="primanobrasCombate">
                 <option value="gFor">Golpe Forte</option>
                 <option value="gMed">Golpe Medio</option>
                 <option value="gFra">Golpe Fraco</option>
@@ -104,7 +106,7 @@
         </section>
 
         <footer class="rodape">
-            <input type="submit" id="checkButton1" value="Finalizar Round" class="checkButton"><br><br>
+            <input type="submit" id="checkButton1" value="Finalizar Round" class="checkButton"><br /><br />
             <textarea class="checkButton" name="combatText" id="batText" cols="98" rows="10" placeholder="Resumo de Combate."></textarea>
         </footer>
     </form>
