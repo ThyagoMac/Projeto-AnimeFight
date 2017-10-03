@@ -1,7 +1,10 @@
 $(".corpo").submit(function (event) {
   event.preventDefault(); //impede que a pag recarregue qnd clica no submit
-
+  $('.checkButton').val("Finalizar Round").text("Pickles");
+  var x = $('select[class="escolha"]').parents('.ficha2').find('.escolha').val();
+  console.log(x);
 });
+var danoMagicoTotal = 0;
 $(document).ready(function () {
 
   var qualidades = $('.perks').clone();
@@ -9,7 +12,7 @@ $(document).ready(function () {
   $(qualidades).insertAfter('.perks');
   $(qualidades).insertAfter('.perks');
 
-  var segundaFicha = $('.ficha').clone();
+  var segundaFicha = $('.ficha').clone().addClass('ficha2').removeClass('ficha');
   $(segundaFicha).insertAfter('.ficha');
 
   $('input[type="range"]').change(function () {
@@ -35,7 +38,7 @@ $(document).ready(function () {
 
   $(".box-con").change(function () {
     var box = $(this).parents('section').find('.box-hp');
-    var bonus = $(this).val() * 10 + 10;
+    var bonus = $(this).val() * 8 + 10;
     $(box).val(bonus);
   });
 
@@ -51,6 +54,9 @@ $(document).ready(function () {
     $(box).val(bonus);
   });
 
+  var defglob = $(this).parents('section').find('.box-def').val()
+  var atackglob = $(this).parents('section').find('.box-acerto').val()
+
   $('select[class="perks"]').change(function () {
     var perk = $(this).val();
     switch (perk) {
@@ -64,7 +70,8 @@ $(document).ready(function () {
         break;
 
       case "danoMagic":
-        var danoMagicoTotal = 4;
+        danoMagicoTotal = danoMagicoTotal + 4;
+        console.log(danoMagicoTotal);
         break;
 
       case "controle":
@@ -80,17 +87,21 @@ $(document).ready(function () {
         var box = $(this).parents('section').find('.box-def');
         var boxval = $(this).parents('section').find('.box-def').val() * 1 + 15;
         $(box).val(boxval);
-        $(box).trigger('change');
         break;
 
       case "armor":
-        console.log("test5");
+        var box = $(this).parents('section').find('.box-hp');
+        var boxval = $(this).parents('section').find('.box-hp').val() * 1 + 24;
+        $(box).val(boxval);
         break;
 
       case "arma":
-        console.log("test6");
+        var box = $(this).parents('section').find('.box-dano');
+        var boxval = $(this).parents('section').find('.box-dano').val() * 1 + 6;
+        $(box).val(boxval);
         break;
     }
+    $(this).attr('disabled', 'disabled');
   });
 
   ///Cod Hover!!!
