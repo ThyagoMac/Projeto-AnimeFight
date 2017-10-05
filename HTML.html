@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form class="corpo" id="corpse">
+    <form class="corpo">
         <header class="cabecalho" id="cabeca">
             <div>
                 <h1><b>ANIME FIGHT</b></h1>
@@ -66,11 +66,11 @@
                     <option value="">[Vazio]</option>
                     <option value="voar">Voar</option>
                     <option value="atribut">Aumento Atributo(2)</option>
-                    <option value="danoMagic">Dano Magico (1d6)</option>
+                    <option value="danoMagic">Dano Magico (+5)</option>
                     <option value="controle">Controlar Elemento</option>
                     <option value="teleport">Teleport</option>
                     <option value="armor">Armadura Magica</option>
-                    <option value="arma">Arma Magica</option>     
+                    <option value="arma">Arma Magica (+6)</option>     
                 </select>
                 <br />
             </div>
@@ -87,9 +87,11 @@
                     </tr>
                     <tr class="tabPer">
                         <td><label for="priHP">HP:</label></td>
-                        <td><input type="text" class="box-hp" id="priHP" size="1" value="15" readonly></td>
+                        <td><input type="text" class="box-hp" id="priHP" size="1" value="28" readonly></td>
                         <td><label for="priDano">Dano:</label></td>
                         <td><input type="text" class="box-dano" id="priDano" size="1" value="3" readonly></td>
+                        <td><label for="priMag">Magico:</label></td>
+                        <td><input type="text" class="box-danoMagico" id="priMag" size="1" value="3" readonly></td>
                     </tr>
                 </table>
             </div>
@@ -108,7 +110,7 @@
 
         <footer class="rodape">
             <input type="submit" id="checkButtonN" value="START" class="checkButton"><br /><br />
-            <textarea class="textArea" name="combatText" id="batText" cols="98" rows="10" placeholder="Resumo de Combate."></textarea>
+            <textarea class="textArea" cols="98" rows="10" placeholder="Resumo de Combate." readonly></textarea>
         </footer>
     </form>
 
