@@ -1,3 +1,12 @@
+@keyframes play1 {
+	0% {width: 230px;}
+	100% {width: 340px;}
+}
+@keyframes play2 {
+	0% {height: 0px;}
+	100% {height: 108px;}
+}
+
 body {
 	color: rgba(0, 0, 0, 1);
 	font-family: arial, sans-serif;
@@ -19,10 +28,21 @@ section.ficha2 {
 	box-shadow: 1px 1px 4px black;
 	padding: 1px 0px 10px 5px;
 	background-color: rgb(243, 243, 243);
+	animation-name: play1;
+	animation-duration: 1s;
 }
 
-div.cabecalho {
-	margin: 1px solid #030202;
+.verde {
+	color: rgb(0, 128, 0);
+	font-weight: bold;
+}
+.vermelho {
+	color: rgb(209, 0, 0);
+	font-weight: bold;
+}
+.amarelo {
+	color: rgb(153, 153, 0);
+	font-weight: bold;
 }
 
 tr.tabPer {
@@ -31,13 +51,12 @@ tr.tabPer {
 
 footer.rodape {
 	clear: both;
-	border-top: 1px solid #606060;
-	width: 345px;
+	width: 100%;
 }
 
 .checkButton,
 .textArea {
-	width: 350px;
+	width: 100%;
 	box-shadow: 1px 1px 4px black;
 }
 
@@ -46,22 +65,35 @@ form.corpo {
 	margin: auto;
 }
 
+.painel1, .painel2 {
+	border-right: 1px solid #606060;
+	width: 345px;
+	box-shadow: 1px 1px 4px black;
+	padding: 1px 0px 10px 5px;
+	background-color: rgb(243, 243, 243);
+	animation-name: play2;
+	animation-duration: 1s;
+	display: inline-block;
+	width: 49%;
+}
+
 @media (min-width: 720px) {
 	section.ficha,
 	section.ficha2 {
 		display: inline-block;
+		width: 49%;
 	}
 	aside.segPersonagem {
 		display: inline-block;
 	}
 	.checkButton {
-		width: 702px;
+		width: 100%;
 	}
 	.textArea {
-		width: 697px;
+		width: 100%px;
 	}
 	form.corpo {
-		width: 720px;
+		width: 700px;
 		margin: auto;
 	}
 }
