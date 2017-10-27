@@ -131,17 +131,17 @@ $(document).ready(function () {
       boxAcerto = parseInt(boxAcerto) + parseInt(dice(100, 1, 1)) - 10;
       boxDef = parseInt(boxDef) + 50 - 10;
       boxDano = parseInt(boxDano) + 8 + parseInt(dice(6, 1, 1));
-       
+
     } else if (acao1 == 'gMed') {
       boxAcerto = parseInt(boxAcerto) + parseInt(dice(100, 1, 1));
       boxDef = parseInt(boxDef) + 50;
       boxDano = parseInt(boxDano) + parseInt(dice(6, 1, 1));
-      
+
     } else if (acao1 == 'gFra') {
       boxAcerto = parseInt(boxAcerto) + parseInt(dice(100, 1, 1)) + 5;
       boxDef = parseInt(boxDef) + 50 + 5;
       boxDano = parseInt(boxDano) + parseInt(dice(6, 1, 1)) - 4;
-      
+
     } else if (acao1 == 'grab') {
       boxAcerto = parseInt(boxAcerto) + parseInt(dice(100, 1, 1)) - 5;
       boxDef = parseInt(boxDef) + 50 - 5;
@@ -200,86 +200,123 @@ $(document).ready(function () {
       boxDano2 = 0;
 
     };
-    
+
     ///Finalization!!!
     var box1 = $('.ficha').find('.box-hp');
     var box2 = $('.ficha2').find('.box-hp');
-    
+
     var priTest = "";
     var secTest = "";
-    if (boxAcerto >= boxDef2){
+    if (boxAcerto >= boxDef2) {
       boxHp2 = boxHp2 - parseInt(boxDano);
       $(box2).val(boxHp2);
-      priTest = "ACERTOU!!!";
-    }else {
-      priTest = "ERROU!!!";
+      priTest = "<span class='verde'>ACERTOU!!!</span>";
+    } else {
+      priTest = "<span class='vermelho'>ERROU!!!</span>";
     }
-    if (boxAcerto2 >= boxDef){
+    if (boxAcerto2 >= boxDef) {
       boxHp = boxHp - parseInt(boxDano2)
       $(box1).val(boxHp);
-      secTest = "Acertou!!!";
-    }else {
-      secTest = "Errou!!!";
+      secTest = "<span class='verde'>ACERTOU!!!</span>";
+    } else {
+      secTest = "<span class='vermelho'>ERROU!!!</span>";
     }
 
-    
 
-    $('textarea[class="textArea"]').removeClass("textArea").addClass("combatArea");
+
+    $(".textArea").removeClass("textArea").addClass("combatArea");
 
     var nomeChar1 = $('.ficha').find('.nome').val();
     var nomeChar2 = $('.ficha2').find('.nome').val();
     if (boxHp < 0 && boxHp2 < 0) {
-      $('textarea[class="combatArea"]').val(nomeChar1 + " e " + nomeChar2 + " cairam no chão inconsciente!!!");
+      $('.combatArea').html("<span class='vermelho'>" + nomeChar1 + "</span> e <span class='vermelho'>" + nomeChar2 + " </span>cairam no chão inconsciente!!!");
 
     } else if (boxHp < 0) {
-      $('textarea[class="combatArea"]').val(nomeChar1 + " caiu no chão inconsciente!!!");
+      $('.combatArea').html("<span class='vermelho'>" + nomeChar1 + "</span> caiu no chão inconsciente!!!");
 
     } else if (boxHp2 < 0) {
-      $('textarea[class="combatArea"]').val(nomeChar2 + " caiu no chão inconsciente!!!");
+      $('.combatArea').html("<span class='vermelho'>" + nomeChar2 + "</span> caiu no chão inconsciente!!!");
 
     } else {
-      $('textarea[class="combatArea"]').val(nomeChar1 + " " + "HP: " + boxHp + " Dano: " + boxDano + " Acerto: " + boxAcerto + " Defesa: " + boxDef + " "+ priTest + "  <=>  " +
-        nomeChar2 + " " + "HP: " + boxHp2 + " Dano: " + boxDano2 + " Acerto: " + boxAcerto2 + " Defesa: " + boxDef2 + " " + secTest);
+      $('.combatArea').html("<div class='painel1'><b>" + nomeChar1 + "</b><br/> " + "<span class='verde'>HP: </span>" + boxHp + "<br/> Dano: " + boxDano + " <span class='amarelo'><br/>Acerto: </span>" + boxAcerto + "<br/>Defesa: " + boxDef + "<br/>" + priTest + "</div>" +
+        "<div class='painel2'><b>" + nomeChar2 + "</b><br/>" + " " + "<span class='verde'>HP: </span>" + boxHp2 + "<br/> Dano: " + boxDano2 + " <span class='amarelo'><br/>Acerto: </span>" + boxAcerto2 + "<br/>Defesa: " + boxDef2 + "<br/>" + secTest + "</div>");
     }
 
   });
 
-  ///Cod Hover!!!
   $(".forca")
     .mouseenter(function () {
-      $("textarea[class='textArea']").val("FORÇA: Determina o dano base que seu personagem consegue causar em combate corpo a corpo. (Aumenta o dano base em 2 ptos)");
+      $(".textArea").html("FORÇA:<br/> Determina o dano base que seu personagem consegue causar em combate corpo a corpo. (Aumenta o dano base em 2 ptos)");
     })
     .mouseleave(function () {
-      $("textarea[class='textArea']").val('');
+      $(".textArea").html('');
     });
   $(".const")
     .mouseenter(function () {
-      $("textarea[class='textArea']").val("CONSTITUIÇÃO: Determina o quanto seu personagem consegue resistir antes de cair. (Aumenta o HP em 5 ptos)");
+      $(".textArea").html("CONSTITUIÇÃO:<br/> Determina o quanto seu personagem consegue resistir antes de cair. (Aumenta o HP em 5 ptos)");
     })
     .mouseleave(function () {
-      $("textarea[class='textArea']").val('');
+      $(".textArea").html('');
     });
   $(".destreza")
     .mouseenter(function () {
-      $("textarea[class='textArea']").val("DESTREZA: Determina a precição do seu personagem. (Aumenta a chance de acertar em 5%)");
+      $(".textArea").html("DESTREZA:<br/> Determina a precição do seu personagem. (Aumenta a chance de acertar em 5%)");
     })
     .mouseleave(function () {
-      $("textarea[class='textArea']").val('');
+      $(".textArea").html('');
     });
   $(".agilit")
     .mouseenter(function () {
-      $("textarea[class='textArea']").val("AGLIDADE: Determina a velocidade do seu personagem. (Aumenta a chance de esquiva em 5%)");
+      $(".textArea").html("AGLIDADE:<br/> Determina a velocidade do seu personagem. (Aumenta a chance de esquiva em 5%)");
     })
     .mouseleave(function () {
-      $("textarea[class='textArea']").val('');
+      $(".textArea").html('');
     });
   $(".magia")
     .mouseenter(function () {
-      $("textarea[class='textArea']").val("MAGIA: Determina o dano a distância que seu personagem pode causar. (Aumenta o dano do combate a distancia em 2 ptos)");
+      $(".textArea").html("MAGIA:<br/> Determina o dano a distância que seu personagem pode causar. (Aumenta o dano do combate a distancia em 2 ptos)");
     })
     .mouseleave(function () {
-      $("textarea[class='textArea']").val('');
+      $(".textArea").html('');
     });
-  /////
+
+
+  // ///Cod Hover!!!
+  // $(".forca")
+  //   .mouseenter(function () {
+  //     $("textarea[class='textArea']").val("FORÇA: Determina o dano base que seu personagem consegue causar em combate corpo a corpo. (Aumenta o dano base em 2 ptos)");
+  //   })
+  //   .mouseleave(function () {
+  //     $("textarea[class='textArea']").val('');
+  //   });
+  // $(".const")
+  //   .mouseenter(function () {
+  //     $("textarea[class='textArea']").val("CONSTITUIÇÃO: Determina o quanto seu personagem consegue resistir antes de cair. (Aumenta o HP em 5 ptos)");
+  //   })
+  //   .mouseleave(function () {
+  //     $("textarea[class='textArea']").val('');
+  //   });
+  // $(".destreza")
+  //   .mouseenter(function () {
+  //     $("textarea[class='textArea']").val("DESTREZA: Determina a precição do seu personagem. (Aumenta a chance de acertar em 5%)");
+  //   })
+  //   .mouseleave(function () {
+  //     $("textarea[class='textArea']").val('');
+  //   });
+  // $(".agilit")
+  //   .mouseenter(function () {
+  //     $("textarea[class='textArea']").val("AGLIDADE: Determina a velocidade do seu personagem. (Aumenta a chance de esquiva em 5%)");
+  //   })
+  //   .mouseleave(function () {
+  //     $("textarea[class='textArea']").val('');
+  //   });
+  // $(".magia")
+  //   .mouseenter(function () {
+  //     $("textarea[class='textArea']").val("MAGIA: Determina o dano a distância que seu personagem pode causar. (Aumenta o dano do combate a distancia em 2 ptos)");
+  //   })
+  //   .mouseleave(function () {
+  //     $("textarea[class='textArea']").val('');
+  //   });
+  // /////
 });
 // Math.floor(Math.random() * (variamaximo6 - variaminmin1 + som1) + começa);
